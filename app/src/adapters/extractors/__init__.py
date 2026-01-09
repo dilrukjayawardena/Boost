@@ -1,0 +1,2 @@
+"""Data extractor adapters."""
+
