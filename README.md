@@ -27,7 +27,7 @@ Prerequisites
 - Python 3.9+ (or your preferred Python 3.x)
 - Docker & Docker Compose (optional, for running the project inside containers)
 - Recommended: create a virtual environment for local runs
-- Copy two data files to app/src/data location before running
+- Copy two data files (test.csv,test,json) to app/src/data location before running
 Quickstart — Docker (recommended for reproducible environment)
 1. From the repository root, start services:
 
