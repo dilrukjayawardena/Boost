@@ -15,10 +15,9 @@ class DefaultTransformer(Transformer):
         
         Supported config options:
         - field_mappings: Dict mapping old field names to new field names
-        - field_filters: List of fields to keep (if specified, only these fields are kept)
-        - field_removals: List of fields to remove
+        - columns_to_select: List of fields to keep (if specified, only these fields are kept)
         - value_transforms: Dict of field names to transformation functions
-        - add_fields: Dict of new fields to add with static or computed values
+        - exp_value_transforms: Dict of new fields to add with computed values
         """
         if config is None:
             config = {}

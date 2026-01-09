@@ -93,6 +93,7 @@ class ETLOrchestrator:
             return False
 
     def handle_table(self,batch_df: pl.DataFrame,config: ETLConfig,loader: Loader)-> bool:
+        """Handle ETL depending on table complexity."""
         success =True
         if "column_to_extract" in config.unnest_config:
             table_data = self.handle_complex_data(batch_df, config.unnest_config)
@@ -110,6 +111,7 @@ class ETLOrchestrator:
 
 
     def handle_complex_data(self,df,config):
+        """Handle complex data extraction and transformation."""
         pre_ops =  config.get('preop',None)
         column_name = config.get('column_to_extract')
         op_order = config.get('operations')
@@ -122,6 +124,7 @@ class ETLOrchestrator:
         return process_df
     
     def perform_op(self,df,op_order,column_name):
+        """Perform operations like unnest and explode in order."""
         process_df = df
         for i in range(0,len(op_order.items())):
             print(i)
@@ -132,10 +135,12 @@ class ETLOrchestrator:
         return process_df
 
     def unnest_table(self, batch_df: pl.DataFrame,column_name: str) -> pl.DataFrame:
+        """Unnest a nested column."""
         df_unnested_details = batch_df.unnest(column_name)
         return df_unnested_details
 
     def explod_table(self, batch_df: pl.DataFrame, column_name: str) -> pl.DataFrame:
+        """Explode an array column."""
         exploded_df = batch_df.explode(column_name)
         return exploded_df
     

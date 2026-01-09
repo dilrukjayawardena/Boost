@@ -89,7 +89,7 @@ def example_json_to_database():
 
 
 def example_csv_to_database():
-    """Example: Extract CSV, transform, and load to JSON file."""
+    """Example: Extract CSV, transform, and load to database."""
     config = ETLConfig(
         source_type=DataSourceType.CSV,
         source_path="app/src/data/test.csv",
@@ -111,7 +111,7 @@ def example_csv_to_database():
     run_etl_task(config)
 
 def run_etl_task(config: ETLConfig):
-    """Worker function to execute ETL for a single configuration."""
+    """unction to execute ETL for a single configuration."""
     try:
         orchestrator = ETLOrchestrator()
         orchestrator.run(config)
