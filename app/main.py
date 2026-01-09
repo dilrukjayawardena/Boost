@@ -5,7 +5,6 @@ from app.src.adapters.loaders.storage_loader_factory import StorageLoaderFactory
 from app.src.adapters.extractors.source_extractor_factory import SourceExtractorFactory
 from app.src.domain.entities import ETLConfig, DataSourceType, StorageType
 from app.src.adapters.loaders.database_loader import DatabaseLoader
-from app.src.adapters.loaders.file_loader import FileLoader
 from app.src.adapters.extractors.csv_extractor import CsvExtractor
 from app.src.adapters.extractors.json_extractor import JsonExtractor
 from app.src.utils.transform_helpers import handle_paid_amount,str_to_bool,convert_to_timestamp,convert_date
